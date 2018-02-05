@@ -1,2 +1,2 @@
-# GroupProject
-IOS App Development Group Project 
+# Group Project
+IOS App Development Group Project
