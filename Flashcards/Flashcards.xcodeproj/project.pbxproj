@@ -54,6 +54,7 @@
 		158E1C0A202E00E600F05701 /* Flashcards */ = {
 			isa = PBXGroup;
 			children = (
+				158E1C17202E00E600F05701 /* Info.plist */,
 				158E1C20202E01B700F05701 /* Supporting Files */,
 				158E1C1F202E016A00F05701 /* Model */,
 				158E1C1E202E016400F05701 /* View */,
@@ -91,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				158E1C14202E00E600F05701 /* LaunchScreen.storyboard */,
-				158E1C17202E00E600F05701 /* Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
