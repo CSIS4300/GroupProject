@@ -21,9 +21,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func dropDownButton(_ sender: UIButton) {             //Menu button; when clicked, this hides or unhides the  "create a collection" and "create flashcards" buttons
+    @IBAction func dropDownButton(_ sender: UIButton) {             //DO NOT EDIT THIS FUNCTION
         menuButtons.forEach	{ (button) in
-            button.isHidden = !button.isHidden
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
+                self.view.layoutIfNeeded()
+            })
+            
         }
     }
     
