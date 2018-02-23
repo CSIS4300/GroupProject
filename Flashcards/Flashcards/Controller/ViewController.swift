@@ -40,6 +40,7 @@ class ViewController: UIViewController {
             
             if collection.text != "" {
                 //TODO: Do something with this data
+                var collect = Collection(name: collection.text!)
                 print(collection.text!)
             } else {
                 //TODO: Add error handling
