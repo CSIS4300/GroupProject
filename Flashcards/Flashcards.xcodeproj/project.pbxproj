@@ -14,6 +14,7 @@
 		158E1C16202E00E600F05701 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 158E1C14202E00E600F05701 /* LaunchScreen.storyboard */; };
 		C08D69B3203FE9ED00654BB8 /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08D69B2203FE9ED00654BB8 /* Flashcard.swift */; };
 		C08D69B5203FEAEB00654BB8 /* FlashcardBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08D69B4203FEAEB00654BB8 /* FlashcardBank.swift */; };
+		C0EDC96D20407850001E72D4 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EDC96C20407850001E72D4 /* Collection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		158E1C17202E00E600F05701 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C08D69B2203FE9ED00654BB8 /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Flashcard.swift; path = Flashcards/Model/Flashcard.swift; sourceTree = SOURCE_ROOT; };
 		C08D69B4203FEAEB00654BB8 /* FlashcardBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FlashcardBank.swift; path = Flashcards/Model/FlashcardBank.swift; sourceTree = SOURCE_ROOT; };
+		C0EDC96C20407850001E72D4 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			children = (
 				C08D69B2203FE9ED00654BB8 /* Flashcard.swift */,
 				C08D69B4203FEAEB00654BB8 /* FlashcardBank.swift */,
+				C0EDC96C20407850001E72D4 /* Collection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C08D69B3203FE9ED00654BB8 /* Flashcard.swift in Sources */,
+				C0EDC96D20407850001E72D4 /* Collection.swift in Sources */,
 				158E1C0E202E00E600F05701 /* ViewController.swift in Sources */,
 				C08D69B5203FEAEB00654BB8 /* FlashcardBank.swift in Sources */,
 				158E1C0C202E00E600F05701 /* AppDelegate.swift in Sources */,

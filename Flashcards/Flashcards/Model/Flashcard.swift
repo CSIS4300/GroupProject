@@ -10,10 +10,10 @@ import Foundation
 class Flashcard {
     
     let answer : String
-    let collection : String
+    let collection : Collection
     let question : String
     
-    init(question: String, answer: String, collection: String) {
+    init(question: String, answer: String, collection: Collection) {
         self.question = question
         self.answer = answer
         self.collection = collection
