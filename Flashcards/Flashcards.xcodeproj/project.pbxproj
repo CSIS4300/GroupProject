@@ -12,6 +12,8 @@
 		158E1C11202E00E600F05701 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 158E1C0F202E00E600F05701 /* Main.storyboard */; };
 		158E1C13202E00E600F05701 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 158E1C12202E00E600F05701 /* Assets.xcassets */; };
 		158E1C16202E00E600F05701 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 158E1C14202E00E600F05701 /* LaunchScreen.storyboard */; };
+		C08D69B3203FE9ED00654BB8 /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08D69B2203FE9ED00654BB8 /* Flashcard.swift */; };
+		C08D69B5203FEAEB00654BB8 /* FlashcardBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08D69B4203FEAEB00654BB8 /* FlashcardBank.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		158E1C12202E00E600F05701 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		158E1C15202E00E600F05701 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		158E1C17202E00E600F05701 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C08D69B2203FE9ED00654BB8 /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = SOURCE_ROOT; };
+		C08D69B4203FEAEB00654BB8 /* FlashcardBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardBank.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,11 +58,10 @@
 		158E1C0A202E00E600F05701 /* Flashcards */ = {
 			isa = PBXGroup;
 			children = (
-				158E1C17202E00E600F05701 /* Info.plist */,
-				158E1C20202E01B700F05701 /* Supporting Files */,
 				158E1C1F202E016A00F05701 /* Model */,
 				158E1C1E202E016400F05701 /* View */,
 				158E1C1D202E015700F05701 /* Controller */,
+				158E1C20202E01B700F05701 /* Supporting Files */,
 			);
 			path = Flashcards;
 			sourceTree = "<group>";
@@ -84,6 +87,8 @@
 		158E1C1F202E016A00F05701 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C08D69B2203FE9ED00654BB8 /* Flashcard.swift */,
+				C08D69B4203FEAEB00654BB8 /* FlashcardBank.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -91,6 +96,7 @@
 		158E1C20202E01B700F05701 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				158E1C17202E00E600F05701 /* Info.plist */,
 				158E1C14202E00E600F05701 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
@@ -168,7 +174,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C08D69B3203FE9ED00654BB8 /* Flashcard.swift in Sources */,
 				158E1C0E202E00E600F05701 /* ViewController.swift in Sources */,
+				C08D69B5203FEAEB00654BB8 /* FlashcardBank.swift in Sources */,
 				158E1C0C202E00E600F05701 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,7 +315,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Flashcards/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/Flashcards/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.suu.Flashcards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -321,7 +330,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Flashcards/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/Flashcards/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.suu.Flashcards;
 				PRODUCT_NAME = "$(TARGET_NAME)";

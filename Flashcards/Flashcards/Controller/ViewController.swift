@@ -32,12 +32,33 @@ class ViewController: UIViewController {
     }
     
     @IBAction func createCollection(_ sender: UIButton) {           //TODO: Program button press to create a collection
-        print("Tapped!")
+        print("Create collection pressed")
     }
     
     
     @IBAction func createFlashcards(_ sender: UIButton) {           //TODO: Program button press to create flashcards
-        print("Tapped!")
+        var question : UITextField!
+        //var answer  : UITextField!
+        let questionAlert = UIAlertController(title: "Create New Flashcard", message: "Flashcard Question", preferredStyle: .alert)
+        
+        questionAlert.addAction(UIAlertAction(title: "Save", style: .default, handler: {
+            Void in
+            
+            if question.text != "" {
+                //TODO: Do something with this data
+                let newFlashcard = Flashcard(question: question.text!, answer: "nonthing for now")
+                print(newFlashcard.question)
+            } else {
+                //TODO: Add error handling
+            }
+        }))
+        questionAlert.addTextField { (textField) in
+            question = textField
+            textField.placeholder = "Question"
+            textField.textAlignment = .center
+        }
+        self.present(questionAlert, animated: true, completion: nil)
+        print("Create Flashcard pressed")
     }
     
 }
