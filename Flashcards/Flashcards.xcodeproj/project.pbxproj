@@ -24,8 +24,8 @@
 		158E1C12202E00E600F05701 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		158E1C15202E00E600F05701 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		158E1C17202E00E600F05701 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C08D69B2203FE9ED00654BB8 /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = SOURCE_ROOT; };
-		C08D69B4203FEAEB00654BB8 /* FlashcardBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardBank.swift; sourceTree = SOURCE_ROOT; };
+		C08D69B2203FE9ED00654BB8 /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Flashcard.swift; path = Flashcards/Model/Flashcard.swift; sourceTree = SOURCE_ROOT; };
+		C08D69B4203FEAEB00654BB8 /* FlashcardBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FlashcardBank.swift; path = Flashcards/Model/FlashcardBank.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,7 @@
 		158E1C0A202E00E600F05701 /* Flashcards */ = {
 			isa = PBXGroup;
 			children = (
-				158E1C1F202E016A00F05701 /* Model */,
+				C08D69B62040009000654BB8 /* Model */,
 				158E1C1E202E016400F05701 /* View */,
 				158E1C1D202E015700F05701 /* Controller */,
 				158E1C20202E01B700F05701 /* Supporting Files */,
@@ -84,15 +84,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		158E1C1F202E016A00F05701 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				C08D69B2203FE9ED00654BB8 /* Flashcard.swift */,
-				C08D69B4203FEAEB00654BB8 /* FlashcardBank.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		158E1C20202E01B700F05701 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +91,15 @@
 				158E1C14202E00E600F05701 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C08D69B62040009000654BB8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C08D69B2203FE9ED00654BB8 /* Flashcard.swift */,
+				C08D69B4203FEAEB00654BB8 /* FlashcardBank.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
