@@ -31,34 +31,32 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func createCollection(_ sender: UIButton) {           //TODO: Program button press to create a collection
+    @IBAction func createCollection(_ sender: UIButton) {
+        var collection : UITextField!
+        let alert = UIAlertController(title: "Create New Collection", message: "Flashcard Collection Name", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Save", style: .default, handler: {
+            Void in
+            
+            if collection.text != "" {
+                //TODO: Do something with this data
+                print(collection.text!)
+            } else {
+                //TODO: Add error handling
+            }
+        }))
+        alert.addTextField { (textField) in
+            collection = textField
+            textField.placeholder = "Collection Name"
+            textField.textAlignment = .center
+        }
+        self.present(alert, animated: true, completion: nil)
         print("Create collection pressed")
     }
     
     
     @IBAction func createFlashcards(_ sender: UIButton) {           //TODO: Program button press to create flashcards
-        var question : UITextField!
-        //var answer  : UITextField!
-        let questionAlert = UIAlertController(title: "Create New Flashcard", message: "Flashcard Question", preferredStyle: .alert)
-        
-        questionAlert.addAction(UIAlertAction(title: "Save", style: .default, handler: {
-            Void in
-            
-            if question.text != "" {
-                //TODO: Do something with this data
-                let newFlashcard = Flashcard(question: question.text!, answer: "nonthing for now", collection: "n/a")
-                print(newFlashcard.question)
-            } else {
-                //TODO: Add error handling
-            }
-        }))
-        questionAlert.addTextField { (textField) in
-            question = textField
-            textField.placeholder = "Question"
-            textField.textAlignment = .center
-        }
-        self.present(questionAlert, animated: true, completion: nil)
-        print("Create Flashcard pressed")
+                print("Create Flashcard pressed")
     }
     
 }
