@@ -9,11 +9,13 @@ import Foundation
 
 class Flashcard {
     
-    let question : String
     let answer : String
+    let collection : String
+    let question : String
     
-    init(question: String, answer: String) {
+    init(question: String, answer: String, collection: String) {
         self.question = question
         self.answer = answer
+        self.collection = collection
     }
 }
