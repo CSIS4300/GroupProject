@@ -46,7 +46,7 @@ class ViewController: UIViewController {
             
             if question.text != "" {
                 //TODO: Do something with this data
-                let newFlashcard = Flashcard(question: question.text!, answer: "nonthing for now")
+                let newFlashcard = Flashcard(question: question.text!, answer: "nonthing for now", collection: "n/a")
                 print(newFlashcard.question)
             } else {
                 //TODO: Add error handling
