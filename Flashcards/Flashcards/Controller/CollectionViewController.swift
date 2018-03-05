@@ -8,18 +8,13 @@ import UIKit
 
 class CollectionViewController: UITableViewController {
     
-//    var collectionArray = [Collection]()
-    var collectionArray = ["Econ", "Math", "Finance"]
-    let defaults = UserDefaults.standard
- 
+    var collectionArray = [Collection]()
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Collections.plist")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        collectionArray.append(Collection(name: "Econ"))
-//        collectionArray.append(Collection(name: "Math"))
-//        collectionArray.append(Collection(name: "Finance"))
-        if let collection = defaults.array(forKey: "CollectionListArray") as? [String] {
-            collectionArray = collection
-        }
+        
+        loadCollection()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,8 +25,10 @@ class CollectionViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionListCell", for: indexPath)
         
-//        cell.textLabel?.text = collectionArray[indexPath.row].collectionName
-        cell.textLabel?.text = collectionArray[indexPath.row]
+        let collection = collectionArray[indexPath.row]
+        
+        cell.textLabel?.text = collection.name
+        
         return cell
     }
     
@@ -40,18 +37,18 @@ class CollectionViewController: UITableViewController {
     }
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        
         var newCollection = UITextField()
+        
         let alert = UIAlertController(title: "Add a New Collection", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add Collection", style: .default) { (action) in
-//            self.collectionArray.append(Collection(name: newCollection.text!))
-            self.collectionArray.append(newCollection.text!)
-
-            // TODO: Add error handling
             
-            // save user input
-            self.defaults.set(self.collectionArray, forKey: "CollectionListArray")
-            // Reload Table data
-            self.tableView.reloadData()
+            let new = Collection()
+            new.name = newCollection.text!
+            
+            self.collectionArray.append(new)
+            
+            self.saveCollection()
         }
         alert.addTextField { (textField) in
             textField.placeholder = "Enter Collection Name"
@@ -60,6 +57,32 @@ class CollectionViewController: UITableViewController {
         
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
+    }
+    
+    func saveCollection() {
+        // persistent data
+        let encoder = PropertyListEncoder()
+        
+        do {
+            let data = try encoder.encode(collectionArray)
+            try data.write(to: dataFilePath!)
+        } catch {
+            print("Error encoding new item array, \(error)")
+        }
+        
+        // Reload Table Data
+        self.tableView.reloadData()
+    }
+    
+    func loadCollection() {
+        if let data = try? Data(contentsOf: dataFilePath!) {
+            let decoder = PropertyListDecoder()
+            do {
+                collectionArray = try decoder.decode([Collection].self, from: data)
+            } catch {
+                print("Error decoding item array \(error)")
+            }
+        }
     }
 }
 

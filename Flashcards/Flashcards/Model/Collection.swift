@@ -8,12 +8,8 @@
 
 import Foundation
 
-class Collection {
+class Collection : Codable {
     
-    let collectionName : String
-    // color variable?
+    var name : String = "No Name"
     
-    init(name: String) {
-        collectionName = name
-    }
 }
