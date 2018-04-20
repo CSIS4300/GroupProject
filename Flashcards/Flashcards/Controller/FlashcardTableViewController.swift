@@ -3,18 +3,15 @@
 //  Flashcards
 //
 //  Created by Sight Syndicate on 4/19/18.
-//  Copyright © 2018 Carly Chase. All rights reserved.
 //
 import UIKit
 
 class FlashCardTableViewController: UITableViewController {
     
     var flashcardArray = [Flashcard]()
-    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Flashcard.plist")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadFlashcard()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,14 +42,9 @@ class FlashCardTableViewController: UITableViewController {
         let alert = UIAlertController(title: "Add a New Flash Card", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add Flash Card", style: .default) { (action) in
             
-            let new = Flashcard()
-            new.title = flashcardTitle.text!
-            new.question = flashcardQuestion.text!
-            new.answer = flashcardAnswer.text!
+        self.flashcardArray.append(Flashcard(title: flashcardTitle.text!, question: flashcardQuestion.text!, answer: flashcardAnswer.text!))
             
-            self.flashcardArray.append(new)
-            
-            self.saveFlashcard()
+        self.update()
         }
         alert.addTextField { (textField) in
             textField.placeholder = "Enter Flash Card Title"
@@ -71,29 +63,7 @@ class FlashCardTableViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func saveFlashcard() {
-        // persistent data
-        let encoder = PropertyListEncoder()
-        
-        do {
-            let data = try encoder.encode(self.flashcardArray)
-            try data.write(to: self.dataFilePath!)
-        } catch {
-            print("Error encoding new item array, \(error)")
-        }
-        
-        // Reload Table Data
+    func update() {
         self.tableView.reloadData()
-    }
-    
-    func loadFlashcard() {
-        if let data = try? Data(contentsOf: dataFilePath!) {
-            let decoder = PropertyListDecoder()
-            do {
-                flashcardArray = try decoder.decode([Flashcard].self, from: data)
-            } catch {
-                print("Error decoding item array \(error)")
-            }
-        }
     }
 }

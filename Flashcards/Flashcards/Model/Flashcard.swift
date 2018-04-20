@@ -7,10 +7,15 @@
 
 import Foundation
 
-class Flashcard : Codable {
+class Flashcard {
     
-    var title : String = "title"
-    var answer : String = "answer"
-    var question : String = "question"
+    var title : String
+    var question : String
+    var answer : String
     
+    init(title : String, question: String, answer: String) {
+        self.title = title
+        self.question = question
+        self.answer = answer
+    }
 }

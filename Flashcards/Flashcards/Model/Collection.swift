@@ -3,13 +3,17 @@
 //  Flashcards
 //
 //  Created by Sight Syndicate on 2/23/18.
-//  Copyright © 2018 Carly Chase. All rights reserved.
 //
 
 import Foundation
 
-class Collection : Codable {
+class Collection {
     
-    var name : String = "No Name"
+    var name : String
+    var flashcards = [Flashcard]()
     
+    init(name: String) {
+        self.name = name
+        self.flashcards.append(Flashcard(title: "empty", question: "empty", answer: "empty"))
+    }
 }
