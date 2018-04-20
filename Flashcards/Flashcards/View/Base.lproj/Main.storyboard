@@ -100,9 +100,35 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cK8-Ma-mWy">
                                                 <rect key="frame" x="23" y="119" width="328" height="336"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Question" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wFt-dr-gKl">
+                                                        <rect key="frame" x="0.0" y="0.0" width="328" height="336"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="328" id="bp9-8a-dnQ"/>
+                                                            <constraint firstAttribute="height" constant="336" id="xEh-fG-adP"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Answer" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mBb-1C-l0j">
+                                                        <rect key="frame" x="0.0" y="0.0" width="328" height="336"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="336" id="BAm-oG-zo9"/>
+                                                            <constraint firstAttribute="width" constant="328" id="lL2-ty-ocd"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
+                                                    <constraint firstItem="mBb-1C-l0j" firstAttribute="baseline" secondItem="wFt-dr-gKl" secondAttribute="baseline" id="9Zo-ty-KFv"/>
+                                                    <constraint firstItem="mBb-1C-l0j" firstAttribute="leading" secondItem="wFt-dr-gKl" secondAttribute="leading" id="ANJ-gH-Piq"/>
+                                                    <constraint firstItem="wFt-dr-gKl" firstAttribute="top" secondItem="cK8-Ma-mWy" secondAttribute="top" id="HUr-jC-c8h"/>
                                                     <constraint firstAttribute="height" constant="336" id="ORm-7W-AoG"/>
+                                                    <constraint firstItem="wFt-dr-gKl" firstAttribute="leading" secondItem="cK8-Ma-mWy" secondAttribute="leading" id="aKB-Wl-hku"/>
                                                     <constraint firstAttribute="width" constant="328" id="fkg-JG-HaX"/>
                                                 </constraints>
                                             </view>
@@ -162,6 +188,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Iwz-yt-l2q"/>
                     </view>
+                    <connections>
+                        <outlet property="answerTextArea" destination="mBb-1C-l0j" id="MiI-1w-6EJ"/>
+                        <outlet property="questionTextArea" destination="wFt-dr-gKl" id="i8u-EP-VU7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QcW-OE-t2x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
