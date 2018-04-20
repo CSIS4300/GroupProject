@@ -12,8 +12,8 @@
 		158E1C11202E00E600F05701 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 158E1C0F202E00E600F05701 /* Main.storyboard */; };
 		158E1C13202E00E600F05701 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 158E1C12202E00E600F05701 /* Assets.xcassets */; };
 		158E1C16202E00E600F05701 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 158E1C14202E00E600F05701 /* LaunchScreen.storyboard */; };
+		C01C36DB2089620C009A5A91 /* FlashCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01C36DA2089620C009A5A91 /* FlashCardViewController.swift */; };
 		C08D69B3203FE9ED00654BB8 /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08D69B2203FE9ED00654BB8 /* Flashcard.swift */; };
-		C0B5EDCE205047E400D04DC7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B5EDCD205047E400D04DC7 /* HomeViewController.swift */; };
 		C0EDC96D20407850001E72D4 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EDC96C20407850001E72D4 /* Collection.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,8 +25,8 @@
 		158E1C12202E00E600F05701 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		158E1C15202E00E600F05701 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		158E1C17202E00E600F05701 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C01C36DA2089620C009A5A91 /* FlashCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardViewController.swift; sourceTree = "<group>"; };
 		C08D69B2203FE9ED00654BB8 /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Flashcard.swift; path = Flashcards/Model/Flashcard.swift; sourceTree = SOURCE_ROOT; };
-		C0B5EDCD205047E400D04DC7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C0EDC96C20407850001E72D4 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,7 +73,7 @@
 			children = (
 				158E1C0B202E00E600F05701 /* AppDelegate.swift */,
 				158E1C0D202E00E600F05701 /* CollectionViewController.swift */,
-				C0B5EDCD205047E400D04DC7 /* HomeViewController.swift */,
+				C01C36DA2089620C009A5A91 /* FlashCardViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -177,11 +177,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0B5EDCE205047E400D04DC7 /* HomeViewController.swift in Sources */,
 				C08D69B3203FE9ED00654BB8 /* Flashcard.swift in Sources */,
 				C0EDC96D20407850001E72D4 /* Collection.swift in Sources */,
 				158E1C0E202E00E600F05701 /* CollectionViewController.swift in Sources */,
 				158E1C0C202E00E600F05701 /* AppDelegate.swift in Sources */,
+				C01C36DB2089620C009A5A91 /* FlashCardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

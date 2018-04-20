@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,7 +26,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="lzO-Nr-vs7" kind="show" id="Ggz-Ik-da1"/>
+                                    <segue destination="Lla-PY-6Ok" kind="show" id="zmB-GQ-kkm"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -49,29 +48,40 @@
             </objects>
             <point key="canvasLocation" x="1247.2" y="122.78860569715144"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="yGo-gp-f3T">
+        <!--Flash Cards-->
+        <scene sceneID="hOH-K8-G96">
             <objects>
-                <viewController id="lzO-Nr-vs7" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kXz-zv-75G">
+                <tableViewController title="Flash Cards" id="Lla-PY-6Ok" customClass="FlashCardViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vnf-9j-wB4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flash Cards for collection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bux-ru-ziu">
-                                <rect key="frame" x="90" y="323" width="194" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="ZEN-fk-C7z"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f8T-Ok-fIR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FlashcardListCell" id="pwe-r4-vYj">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pwe-r4-vYj" id="3j3-aK-kzD">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Lla-PY-6Ok" id="4vx-s5-CvZ"/>
+                            <outlet property="delegate" destination="Lla-PY-6Ok" id="JuW-mf-jWj"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Flash Cards" id="7dI-Lq-rF9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="WkA-mM-lyk">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="Lla-PY-6Ok" id="h1t-Mn-DDj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rSv-SC-ydb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2140" y="123"/>
+            <point key="canvasLocation" x="2049" y="123"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WyL-G8-yOu">
