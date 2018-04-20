@@ -8,6 +8,9 @@
 import UIKit
 
 class FlashcardViewController: UIViewController {
+    @IBOutlet weak var questionTextArea: UITextField!
+    @IBOutlet weak var answerTextArea: UITextField!
+    
     @IBAction func leftArrowButton(_ sender: UIButton) {
         print("<")
     }
@@ -16,6 +19,15 @@ class FlashcardViewController: UIViewController {
     }
     @IBAction func flipButton(_ sender: UIButton) {
         print("flip")
+        if (questionTextArea.isHidden){
+            questionTextArea.isHidden = false
+            answerTextArea.isHidden = true
+        }
+        else if (answerTextArea.isHidden){
+            questionTextArea.isHidden = true
+            answerTextArea.isHidden = false
+        }
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
