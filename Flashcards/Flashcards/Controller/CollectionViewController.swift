@@ -8,6 +8,7 @@ import UIKit
 
 class CollectionViewController: UITableViewController {
     
+    var curCollection:Collection = Collection(name: "sup")
     var collectionArray = [Collection]()
     
     override func viewDidLoad() {
@@ -30,7 +31,14 @@ class CollectionViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        curCollection = collectionArray[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let downCast = segue.destination as? FlashcardViewController{
+            downCast.lookAtMeJake = curCollection
+        }
     }
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
