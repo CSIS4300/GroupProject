@@ -8,7 +8,7 @@ import UIKit
 
 class CollectionViewController: UITableViewController {
     
-    var curCollection:Collection = Collection(name: "sup")
+    var curCollection:Collection = Collection(name: "null from collections")
     var collectionArray = [Collection]()
     
     override func viewDidLoad() {
@@ -32,7 +32,9 @@ class CollectionViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         curCollection = collectionArray[indexPath.row]
+        let cell = tableView.cellForRow(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "toFlashcards", sender: cell)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

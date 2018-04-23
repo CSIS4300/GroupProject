@@ -9,7 +9,7 @@ import UIKit
 
 class FlashcardViewController: UIViewController {
     
-    var lookAtMeJake:Collection = Collection(name: "not something youd think of")
+    var lookAtMeJake:Collection = Collection(name: "null from flashcard")
     @IBOutlet weak var questionTextArea: UITextField!
     @IBOutlet weak var answerTextArea: UITextField!
     
@@ -33,7 +33,7 @@ class FlashcardViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(lookAtMeJake.name + "is the name of the collection passed to me")
+        print("\n" + lookAtMeJake.name + " is the name of the collection passed to me")
         
         // Do any additional setup after loading the view.
     }

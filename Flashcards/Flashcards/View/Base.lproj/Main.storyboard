@@ -26,9 +26,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="2RH-En-P1F" kind="show" id="rdT-pe-mzq"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -44,6 +41,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="2RH-En-P1F" kind="show" identifier="toFlashcards" id="FqX-Kj-Zm7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z4Y-5x-LNm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
