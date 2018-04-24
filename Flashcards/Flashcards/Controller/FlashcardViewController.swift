@@ -15,6 +15,7 @@ class FlashcardViewController: UIViewController {
     @IBOutlet weak var questionTextArea: UITextView!
     @IBOutlet weak var answerTextArea: UITextView!
     
+    @IBOutlet weak var DeleteCardButton: UIButton!
     @IBAction func leftArrowButton(_ sender: UIButton) {
         passedCollection.flashcards[currentPosition].question = questionTextArea.text!
         passedCollection.flashcards[currentPosition].answer = answerTextArea.text!
@@ -53,10 +54,18 @@ class FlashcardViewController: UIViewController {
     }
     
     func setFlashcardText(){
+        if(passedCollection.flashcards.count <= 1){
+            DeleteCardButton.isEnabled = false
+        }
+        else{
+            DeleteCardButton.isEnabled = true
+        }
+        
         questionTextArea.text = passedCollection.flashcards[currentPosition].question
         answerTextArea.text = passedCollection.flashcards[currentPosition].answer
         if (passedCollection.flashcards.count == 0){
             flashcardNumber.text = String("\(currentPosition + 1)" + "/" + "1")
+            
         }
         else {
             flashcardNumber.text = String("\(currentPosition + 1)" + "/" + "\(passedCollection.flashcards.count)")
@@ -78,6 +87,15 @@ class FlashcardViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func DeleteCardButton(_ sender: UIButton) {
+        if(passedCollection.flashcards.count > 0){
+            passedCollection.flashcards.remove(at: currentPosition)
+            if(currentPosition >= passedCollection.flashcards.count){
+                currentPosition = passedCollection.flashcards.count-1
+            }
+            setFlashcardText()
+        }
+    }
     
     /*
      // MARK: - Navigation
@@ -87,5 +105,5 @@ class FlashcardViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
-    
 }
+

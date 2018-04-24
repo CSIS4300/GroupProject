@@ -107,6 +107,16 @@
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bO7-yx-bUa">
+                                                <rect key="frame" x="282" y="8" width="85" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Delete Card">
+                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="DeleteCardButton:" destination="2RH-En-P1F" eventType="touchUpInside" id="7s8-pc-Ky9"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
@@ -167,6 +177,7 @@
                         <viewLayoutGuide key="safeArea" id="Iwz-yt-l2q"/>
                     </view>
                     <connections>
+                        <outlet property="DeleteCardButton" destination="bO7-yx-bUa" id="bk6-E8-udn"/>
                         <outlet property="answerTextArea" destination="pF0-1l-gY0" id="UuO-2A-Baq"/>
                         <outlet property="flashcardNumber" destination="sfM-f5-lih" id="T6A-E3-zIj"/>
                         <outlet property="questionTextArea" destination="fXf-Fj-Llc" id="yMI-ny-Ilz"/>
