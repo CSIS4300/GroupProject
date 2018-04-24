@@ -66,35 +66,35 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cK8-Ma-mWy">
                                                 <rect key="frame" x="23" y="119" width="328" height="336"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Question" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wFt-dr-gKl">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Question" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fXf-Fj-Llc" userLabel="Question">
                                                         <rect key="frame" x="0.0" y="0.0" width="328" height="336"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="328" id="bp9-8a-dnQ"/>
-                                                            <constraint firstAttribute="height" constant="336" id="xEh-fG-adP"/>
+                                                            <constraint firstAttribute="width" constant="328" id="Kz7-S4-Wbr"/>
+                                                            <constraint firstAttribute="height" constant="336" id="dcF-fw-yyD"/>
                                                         </constraints>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Answer" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mBb-1C-l0j">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                    <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Answer" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pF0-1l-gY0" userLabel="Answer">
                                                         <rect key="frame" x="0.0" y="0.0" width="328" height="336"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="336" id="BAm-oG-zo9"/>
-                                                            <constraint firstAttribute="width" constant="328" id="lL2-ty-ocd"/>
+                                                            <constraint firstAttribute="height" constant="336" id="Ob2-PI-vyE"/>
+                                                            <constraint firstAttribute="width" constant="328" id="hde-dl-RbD"/>
                                                         </constraints>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstItem="mBb-1C-l0j" firstAttribute="baseline" secondItem="wFt-dr-gKl" secondAttribute="baseline" id="9Zo-ty-KFv"/>
-                                                    <constraint firstItem="mBb-1C-l0j" firstAttribute="leading" secondItem="wFt-dr-gKl" secondAttribute="leading" id="ANJ-gH-Piq"/>
-                                                    <constraint firstItem="wFt-dr-gKl" firstAttribute="top" secondItem="cK8-Ma-mWy" secondAttribute="top" id="HUr-jC-c8h"/>
+                                                    <constraint firstItem="pF0-1l-gY0" firstAttribute="top" secondItem="fXf-Fj-Llc" secondAttribute="top" id="6PG-1H-u4M"/>
                                                     <constraint firstAttribute="height" constant="336" id="ORm-7W-AoG"/>
-                                                    <constraint firstItem="wFt-dr-gKl" firstAttribute="leading" secondItem="cK8-Ma-mWy" secondAttribute="leading" id="aKB-Wl-hku"/>
+                                                    <constraint firstItem="fXf-Fj-Llc" firstAttribute="top" secondItem="cK8-Ma-mWy" secondAttribute="top" id="Qq2-cO-HfD"/>
                                                     <constraint firstAttribute="width" constant="328" id="fkg-JG-HaX"/>
+                                                    <constraint firstItem="pF0-1l-gY0" firstAttribute="leading" secondItem="fXf-Fj-Llc" secondAttribute="leading" id="n8T-Hu-us6"/>
+                                                    <constraint firstItem="fXf-Fj-Llc" firstAttribute="leading" secondItem="cK8-Ma-mWy" secondAttribute="leading" id="sFh-Ww-vx5"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfM-f5-lih">
@@ -167,9 +167,9 @@
                         <viewLayoutGuide key="safeArea" id="Iwz-yt-l2q"/>
                     </view>
                     <connections>
-                        <outlet property="answerTextArea" destination="mBb-1C-l0j" id="MiI-1w-6EJ"/>
+                        <outlet property="answerTextArea" destination="pF0-1l-gY0" id="UuO-2A-Baq"/>
                         <outlet property="flashcardNumber" destination="sfM-f5-lih" id="T6A-E3-zIj"/>
-                        <outlet property="questionTextArea" destination="wFt-dr-gKl" id="i8u-EP-VU7"/>
+                        <outlet property="questionTextArea" destination="fXf-Fj-Llc" id="yMI-ny-Ilz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QcW-OE-t2x" userLabel="First Responder" sceneMemberID="firstResponder"/>

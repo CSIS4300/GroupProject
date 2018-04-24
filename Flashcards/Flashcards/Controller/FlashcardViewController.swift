@@ -13,8 +13,8 @@ class FlashcardViewController: UIViewController {
     var passedCollection:Collection = Collection(name: "null from flashcard")
     var currentPosition = 0
     var maxPosition = 0
-    @IBOutlet weak var questionTextArea: UITextField!
-    @IBOutlet weak var answerTextArea: UITextField!
+    @IBOutlet weak var questionTextArea: UITextView!
+    @IBOutlet weak var answerTextArea: UITextView!
     
     @IBAction func leftArrowButton(_ sender: UIButton) {
         passedCollection.flashcards[currentPosition].question = questionTextArea.text!
@@ -64,6 +64,10 @@ class FlashcardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setFlashcardText()
+        questionTextArea.layer.borderColor = UIColor.black.cgColor
+        answerTextArea.layer.borderColor = UIColor.black.cgColor
+        questionTextArea.layer.borderWidth = 1.0
+        answerTextArea.layer.borderWidth = 1.0
         print("\n" + passedCollection.name + " is the name of the collection passed to me")
         maxPosition = passedCollection.flashcards.count
 
