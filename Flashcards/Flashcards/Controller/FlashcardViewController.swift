@@ -68,13 +68,14 @@ class FlashcardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        maxPosition = passedCollection.flashcards.count
         setFlashcardText()
         questionTextArea.layer.borderColor = UIColor.black.cgColor
         answerTextArea.layer.borderColor = UIColor.black.cgColor
         questionTextArea.layer.borderWidth = 1.0
         answerTextArea.layer.borderWidth = 1.0
         print("\n" + passedCollection.name + " is the name of the collection passed to me")
-        maxPosition = passedCollection.flashcards.count
+
 
         
     }
