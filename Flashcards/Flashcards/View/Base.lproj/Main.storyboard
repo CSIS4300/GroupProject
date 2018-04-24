@@ -97,11 +97,24 @@
                                                     <constraint firstAttribute="width" constant="328" id="fkg-JG-HaX"/>
                                                 </constraints>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfM-f5-lih">
+                                                <rect key="frame" x="143" y="26" width="89" height="73"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="89" id="5pD-gD-jYO"/>
+                                                    <constraint firstAttribute="height" constant="73" id="Akh-uF-y9X"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="cK8-Ma-mWy" firstAttribute="centerX" secondItem="pew-Fu-21T" secondAttribute="centerX" id="2UZ-Pt-PDX"/>
+                                            <constraint firstItem="cK8-Ma-mWy" firstAttribute="top" secondItem="sfM-f5-lih" secondAttribute="bottom" constant="20" id="IfX-gv-YL8"/>
                                             <constraint firstItem="cK8-Ma-mWy" firstAttribute="centerY" secondItem="pew-Fu-21T" secondAttribute="centerY" id="JoO-O7-gYk"/>
+                                            <constraint firstItem="sfM-f5-lih" firstAttribute="top" secondItem="pew-Fu-21T" secondAttribute="top" constant="26" id="Uan-2q-xxE"/>
+                                            <constraint firstItem="sfM-f5-lih" firstAttribute="centerX" secondItem="cK8-Ma-mWy" secondAttribute="centerX" id="dav-bi-d0f"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nP1-P6-asC">
@@ -155,12 +168,13 @@
                     </view>
                     <connections>
                         <outlet property="answerTextArea" destination="mBb-1C-l0j" id="MiI-1w-6EJ"/>
+                        <outlet property="flashcardNumber" destination="sfM-f5-lih" id="T6A-E3-zIj"/>
                         <outlet property="questionTextArea" destination="wFt-dr-gKl" id="i8u-EP-VU7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QcW-OE-t2x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2105" y="123"/>
+            <point key="canvasLocation" x="2104.8000000000002" y="122.78860569715144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WyL-G8-yOu">

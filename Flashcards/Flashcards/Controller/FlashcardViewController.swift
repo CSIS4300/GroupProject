@@ -9,6 +9,7 @@ import UIKit
 
 class FlashcardViewController: UIViewController {
     
+    @IBOutlet weak var flashcardNumber: UILabel!
     var passedCollection:Collection = Collection(name: "null from flashcard")
     var currentPosition = 0
     var maxPosition = 0
@@ -57,6 +58,7 @@ class FlashcardViewController: UIViewController {
             questionTextArea.text = passedCollection.flashcards[currentPosition].question
             answerTextArea.text = passedCollection.flashcards[currentPosition].answer
         }
+        flashcardNumber.text = String(currentPosition + 1)
     }
     
     override func viewDidLoad() {
