@@ -58,7 +58,12 @@ class FlashcardViewController: UIViewController {
             questionTextArea.text = passedCollection.flashcards[currentPosition].question
             answerTextArea.text = passedCollection.flashcards[currentPosition].answer
         }
-        flashcardNumber.text = String(currentPosition + 1)
+        if (maxPosition == 0){
+            flashcardNumber.text = String("\(currentPosition + 1)" + "/" + "1")
+        }
+        else {
+            flashcardNumber.text = String("\(currentPosition + 1)" + "/" + "\(maxPosition)")
+        }
     }
     
     override func viewDidLoad() {
