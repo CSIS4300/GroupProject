@@ -12,7 +12,6 @@ class FlashcardViewController: UIViewController {
     @IBOutlet weak var flashcardNumber: UILabel!
     var passedCollection:Collection = Collection(name: "null from flashcard")
     var currentPosition = 0
-    var maxPosition = 0
     @IBOutlet weak var questionTextArea: UITextView!
     @IBOutlet weak var answerTextArea: UITextView!
     
@@ -20,7 +19,11 @@ class FlashcardViewController: UIViewController {
         passedCollection.flashcards[currentPosition].question = questionTextArea.text!
         passedCollection.flashcards[currentPosition].answer = answerTextArea.text!
         
+        
         currentPosition-=1
+        if (currentPosition < 0){
+            currentPosition = 0;
+        }
         setFlashcardText()
     }
     @IBAction func rightArrowButton(_ sender: UIButton) {
@@ -28,8 +31,7 @@ class FlashcardViewController: UIViewController {
         passedCollection.flashcards[currentPosition].answer = answerTextArea.text!
         
         currentPosition+=1
-        if (currentPosition >= maxPosition){
-            maxPosition+=1
+        if (currentPosition == passedCollection.flashcards.count){
             passedCollection.flashcards.append(Flashcard(title: "empty", question: "Enter a question", answer: "Enter an answer"))
             setFlashcardText()
         }
@@ -51,32 +53,23 @@ class FlashcardViewController: UIViewController {
     }
     
     func setFlashcardText(){
-        if (currentPosition < 0){
-            currentPosition = 0;
-        }
-        else {
-            questionTextArea.text = passedCollection.flashcards[currentPosition].question
-            answerTextArea.text = passedCollection.flashcards[currentPosition].answer
-        }
-        if (maxPosition == 0){
+        questionTextArea.text = passedCollection.flashcards[currentPosition].question
+        answerTextArea.text = passedCollection.flashcards[currentPosition].answer
+        if (passedCollection.flashcards.count == 0){
             flashcardNumber.text = String("\(currentPosition + 1)" + "/" + "1")
         }
         else {
-            flashcardNumber.text = String("\(currentPosition + 1)" + "/" + "\(maxPosition)")
+            flashcardNumber.text = String("\(currentPosition + 1)" + "/" + "\(passedCollection.flashcards.count)")
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        maxPosition = passedCollection.flashcards.count
         setFlashcardText()
         questionTextArea.layer.borderColor = UIColor.black.cgColor
         answerTextArea.layer.borderColor = UIColor.black.cgColor
         questionTextArea.layer.borderWidth = 1.0
         answerTextArea.layer.borderWidth = 1.0
-        print("\n" + passedCollection.name + " is the name of the collection passed to me")
-
-
         
     }
     
