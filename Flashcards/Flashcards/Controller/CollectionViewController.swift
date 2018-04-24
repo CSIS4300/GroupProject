@@ -39,7 +39,7 @@ class CollectionViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let downCast = segue.destination as? FlashcardViewController{
-            downCast.lookAtMeJake = curCollection
+            downCast.passedCollection = curCollection
         }
     }
     

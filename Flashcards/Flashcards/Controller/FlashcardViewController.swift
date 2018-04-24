@@ -9,15 +9,32 @@ import UIKit
 
 class FlashcardViewController: UIViewController {
     
-    var lookAtMeJake:Collection = Collection(name: "null from flashcard")
+    var passedCollection:Collection = Collection(name: "null from flashcard")
+    var currentPosition = 0
+    var maxPosition = 0
     @IBOutlet weak var questionTextArea: UITextField!
     @IBOutlet weak var answerTextArea: UITextField!
     
     @IBAction func leftArrowButton(_ sender: UIButton) {
-        print("<")
+        passedCollection.flashcards[currentPosition].question = questionTextArea.text!
+        passedCollection.flashcards[currentPosition].answer = answerTextArea.text!
+        
+        currentPosition-=1
+        setFlashcardText()
     }
     @IBAction func rightArrowButton(_ sender: UIButton) {
-        print(">")
+        passedCollection.flashcards[currentPosition].question = questionTextArea.text!
+        passedCollection.flashcards[currentPosition].answer = answerTextArea.text!
+        
+        currentPosition+=1
+        if (currentPosition >= maxPosition){
+            maxPosition+=1
+            passedCollection.flashcards.append(Flashcard(title: "empty", question: "Enter a question", answer: "Enter an answer"))
+            setFlashcardText()
+        }
+        else {
+            setFlashcardText()
+        }
     }
     @IBAction func flipButton(_ sender: UIButton) {
         print("flip")
@@ -31,11 +48,24 @@ class FlashcardViewController: UIViewController {
         }
         
     }
+    
+    func setFlashcardText(){
+        if (currentPosition < 0){
+            currentPosition = 0;
+        }
+        else {
+            questionTextArea.text = passedCollection.flashcards[currentPosition].question
+            answerTextArea.text = passedCollection.flashcards[currentPosition].answer
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("\n" + lookAtMeJake.name + " is the name of the collection passed to me")
+        setFlashcardText()
+        print("\n" + passedCollection.name + " is the name of the collection passed to me")
+        maxPosition = passedCollection.flashcards.count
+
         
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {

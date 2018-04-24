@@ -10,10 +10,10 @@ import Foundation
 class Collection {
     
     var name : String
-    var flashcards = [Flashcard]()
+    var flashcards = [Flashcard]() 
     
     init(name: String) {
         self.name = name
-        self.flashcards.append(Flashcard(title: "empty", question: "empty", answer: "empty"))
+        self.flashcards.append(Flashcard(title: "empty", question: "Enter a question", answer: "Enter an answer"))
     }
 }
